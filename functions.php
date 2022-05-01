@@ -3,6 +3,8 @@
  * Functions and definitions
  */
 
+add_theme_support( 'post-thumbnails' );
+
 function my_excerpt_length( $length ) {
     return 15; // Указываем количество слов
 }
