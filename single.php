@@ -21,7 +21,6 @@ if(!empty($latitude)&!empty($longitude)){
     <script>
 if( window.innerWidth >= 600 ){
     startMap();
-    details.classList.add("generated map-show");
 }
 function startMap(){  
     let mapContainer = document.getElementById("map");
