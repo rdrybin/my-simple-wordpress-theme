@@ -164,7 +164,6 @@ h1{
   grid-area: sidebar; 
   padding-right: 15px;
   padding-left: 15px;
-  width: min-content;
 }
 
 .logo-section{

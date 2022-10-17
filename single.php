@@ -5,10 +5,6 @@
 ?>
 <?php get_header() ?>
 <!--map-->
-
-
-
-
 <?php
 $latitude = get_field("latitude1");
 $longitude = get_field("longitude1");
