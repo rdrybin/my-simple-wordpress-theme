@@ -57,7 +57,6 @@ function getYaMap() {
                     balloonContent: '<a href="geo:0,0?q='+latitude+','+longitude+' ('+title+')">Открыть в картах</a>',
                     iconCaption: 'Открыть в картах'
             });
-
             myMap.geoObjects.add(myPlacemark);
         }
 }
@@ -67,13 +66,14 @@ function getYaMap() {
 ?>
 <!-- end map -->
 <div class="main-area">
-    <div class="content">
+    <div class="content" itemscope itemtype="http://schema.org/Article">
         <?php if( have_posts() ) : while( have_posts() ): the_post() ?>
             <div id="post-<?php the_ID() ?>" <?php post_class('inner-post-section') ?>>
                 <div class="post-title">
-                    <h1 class="page-title"><?php the_title() ?></h1>
+                    <meta itemprop="identifier" content="<?php the_ID() ?>">
+                    <h1 class="page-title" itemprop="headline"><?php the_title() ?></h1>
                 </div>
-                <div class="post-content">
+                <div class="post-content" itemprop="articleBody">
                     <?php the_content() ?>
                     
                     <?php
@@ -96,6 +96,19 @@ function getYaMap() {
 
                 <div class="post-below-content">
                     <p class="tags-below-content"><?php the_tags( __( 'Теги: ', 'actuate' ) , ', ', '') ?></p>
+
+                    <?php 
+                        $tags = get_the_tags();
+                        if ( $tags ) {
+                            $tag_names = array();
+
+                            foreach ( $tags as $tag ) {
+                                $tag_names[] = $tag->name;
+                            }
+
+                            echo '<meta itemprop="about" content="'. implode( '"/><meta itemprop="about" content="', $tag_names ). '"/>';
+                        }             
+                    ?>
                 </div>
                 <div class="post-navigation">   
                     <?php the_post_navigation( array(
