@@ -74,7 +74,9 @@ function getYaMap() {
                     <h1 class="page-title" itemprop="headline"><?php the_title() ?></h1>
                 </div>
                 <div class="post-content" itemprop="articleBody">
-                    <?php the_content() ?>
+                    <?php 
+                    the_breadcrumb(); 
+                    the_content(); ?>
                     
                     <?php
                     $videoId=get_field("id_video");
