@@ -21,7 +21,8 @@ h2,
 h2,
 h3,
 a,
-li {
+li
+{
   color: #000000;
   font-family: Georgia, serif;
   font-weight: 400;
@@ -64,7 +65,7 @@ h3 {
   margin-bottom: 28px;
 }
 
-.content a {
+.post a {
   color: #A65B28;
   font-family: Georgia, serif;
   font-weight: 400;

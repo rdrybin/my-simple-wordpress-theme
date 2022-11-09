@@ -81,10 +81,8 @@ function the_breadcrumb()
 function tags_with_count() {
 	global $post;
 	$posttags = get_the_tags($post->ID, 'post_tag' );
-
 	if ( !$posttags )
 		return;
-
 	foreach ( $posttags as $tag ) {
 		if ( $tag->count > 0 && !is_tag($tag->slug) ) {
 			$tag_link = '' . $tag->name . ' (' . number_format_i18n( $tag->count ) . ')';
@@ -95,6 +93,5 @@ function tags_with_count() {
 
 		$tag_links[] = $tag_link;
 	}
-
 	echo '<ul class="tags-counted">' . join( '', $tag_links ) .'</ul>' ;
 }
