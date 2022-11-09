@@ -97,9 +97,9 @@ function getYaMap() {
                 </div>
 
                 <div class="post-below-content">
-                    <p class="tags-below-content"><?php the_tags( __( 'Теги: ', 'actuate' ) , ', ', '') ?></p>
 
                     <?php 
+                    tags_with_count();
                         $tags = get_the_tags();
                         if ( $tags ) {
                             $tag_names = array();
